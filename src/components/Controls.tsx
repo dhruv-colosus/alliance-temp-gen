@@ -51,7 +51,9 @@ export const Controls: React.FC<ControlsProps> = ({
 }) => {
   return (
     <div className="max-w-2xl mx-auto space-y-6">
-      <h2 className="text-4xl font-black">Alliance Template Generator</h2>
+      <h2 className="text-4xl font-black text-gray-50">
+        Alliance Template Generator
+      </h2>
 
       <div className="space-y-2">
         <label className="block text-sm font-medium">Template</label>
@@ -62,7 +64,10 @@ export const Controls: React.FC<ControlsProps> = ({
           }
         >
           <SelectTrigger>
-            <SelectValue placeholder="Select template" />
+            <SelectValue
+              className="text-gray-50 border-gray-700"
+              placeholder="Select template"
+            />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="campus-chronicles">Campus Chronicles</SelectItem>
@@ -90,8 +95,9 @@ export const Controls: React.FC<ControlsProps> = ({
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-1">Heading</label>
+        <label className="block text-sm font-medium mb-1 ">Heading</label>
         <Input
+          className="text-gray-50 border-gray-700"
           type="text"
           placeholder="Enter heading"
           value={imageState.heading}
@@ -104,6 +110,7 @@ export const Controls: React.FC<ControlsProps> = ({
       <div>
         <label className="block text-sm font-medium mb-1">Text</label>
         <Textarea
+          className="text-gray-50 border-gray-700"
           placeholder="Enter your text"
           value={imageState.text}
           onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
@@ -116,6 +123,7 @@ export const Controls: React.FC<ControlsProps> = ({
       <div>
         <label className="block text-sm font-medium mb-1">Page Number</label>
         <Input
+          className="text-gray-50 border-gray-700"
           placeholder="Enter Page Number"
           value={imageState.pagenumber}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>

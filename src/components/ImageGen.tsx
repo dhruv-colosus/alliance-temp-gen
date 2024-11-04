@@ -163,7 +163,7 @@ const ImageGen = () => {
 
       <div className="w-full p-6">
         <div className="flex flex-col items-center">
-          <h3 className="text-xl font-semibold mb-4">Preview</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-50">Preview</h3>
           <ImagePreview
             imageState={imageState}
             refs={refs}

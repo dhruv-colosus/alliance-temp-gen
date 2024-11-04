@@ -98,14 +98,14 @@ export const ImagePreview: React.FC<ImagePreviewProps> = ({
           <h2
             ref={refs.heading}
             className={styles.heading}
-            style={{ bottom: `${98 + totalContentHeight / 2}px` }}
+            style={{ bottom: `${92 + totalContentHeight / 2}px` }}
           >
             {imageState.heading || "Your Heading"}
           </h2>
           <p
             ref={refs.text}
             className={styles.text}
-            style={{ bottom: `${127 - totalContentHeight / 2}px` }}
+            style={{ bottom: `${132 - totalContentHeight / 2}px` }}
             data-text-content
           >
             <span className={styles.innerText}>

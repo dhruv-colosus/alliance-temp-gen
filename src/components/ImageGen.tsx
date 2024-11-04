@@ -120,7 +120,7 @@ const ImageGen = () => {
     imageState.textHeight.heading + imageState.textHeight.text;
 
   return (
-    <div className="flex min-h-screen bg-slate-950">
+    <div className="flex md:flex-row flex-col min-h-screen bg-slate-950">
       <div className="w-full p-6">
         <Controls
           imageState={imageState}

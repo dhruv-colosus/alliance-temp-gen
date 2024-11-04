@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: Gotham;
+    font-weight: 500;
+    src: url(/public/fonts/Gotham\ Medium.otf);
+  }
+  @font-face {
+    font-family: Gotham;
+    font-weight: 900;
+    src: url(/public/fonts/Gotham\ Black\ Regular.ttf);
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;

@@ -132,7 +132,7 @@ export const Controls: React.FC<ControlsProps> = ({
           • Drag image to reposition
           <br />
           • Use mouse wheel to zoom in/out
-          <br />
+          <br /> • Enter anything to correct the alignment
         </p>
       </div>
 

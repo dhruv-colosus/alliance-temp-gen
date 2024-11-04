@@ -7,7 +7,7 @@ export const useImageZoom = (refs, setImageState) => {
       const delta = e.deltaY * -0.01;
       setImageState((prev) => ({
         ...prev,
-        scale: Math.min(Math.max(0.1, prev.scale + delta), 3),
+        scale: Math.min(Math.max(0.1, prev.scale + delta), 10),
       }));
     },
     [setImageState]

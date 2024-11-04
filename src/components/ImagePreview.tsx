@@ -1,4 +1,4 @@
-import { type MouseEvent, type RefObject } from "react";
+import { type RefObject } from "react";
 
 interface ImageState {
   localImage: string | null;
@@ -26,21 +26,21 @@ interface Refs {
 }
 
 interface Styles {
-  overlay: string;
-  redline: string;
-  innerPage: string;
+  redline?: string;
   heading: string;
   text: string;
   innerText: string;
+  overlay: string;
+  innerPage?: string;
 }
 
 interface ImagePreviewProps {
   imageState: ImageState;
   refs: Refs;
   styles: Styles;
-  handleMouseDown: (e: MouseEvent<HTMLDivElement>) => void;
-  handleMouseMove: (e: MouseEvent<HTMLDivElement>) => void;
-  handleMouseUp: (e: MouseEvent<HTMLDivElement>) => void;
+  handleMouseDown: (e: React.MouseEvent<Element>) => void;
+  handleMouseMove: (e: React.MouseEvent<Element>) => void;
+  handleMouseUp: (e: React.MouseEvent<Element>) => void;
   initialScale: number;
   PREVIEW_SIZE: number;
   totalContentHeight: number;

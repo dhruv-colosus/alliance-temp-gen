@@ -1,10 +1,32 @@
 import { useCallback } from "react";
 
-export const useImageDrag = (refs, setImageState) => {
+interface ImageState {
+  heading: string;
+  text: string;
+  localImage: any;
+  isDragging: boolean;
+  dragOffset: { x: number; y: number };
+  position: { x: number; y: number };
+  scale: number;
+  imageSize: { width: number; height: number };
+  textHeight: { heading: number; text: number };
+  pagenumber: string;
+  template: string;
+}
+
+interface Refs {
+  container: React.RefObject<HTMLDivElement>;
+}
+
+type SetImageState = React.Dispatch<React.SetStateAction<ImageState>>;
+
+export const useImageDrag = (refs: Refs, setImageState: SetImageState) => {
   const handleMouseDown = useCallback(
-    (e) => {
+    (e: React.MouseEvent<Element>) => {
       if (e.button !== 0) return;
-      const rect = refs.container.current.getBoundingClientRect();
+      const rect = refs.container.current?.getBoundingClientRect();
+      if (!rect) return;
+
       setImageState((prev) => ({
         ...prev,
         isDragging: true,
@@ -14,15 +36,19 @@ export const useImageDrag = (refs, setImageState) => {
         },
       }));
     },
-    [refs]
+    [refs, setImageState]
   );
 
   const handleMouseMove = useCallback(
-    (e) => {
+    (e: React.MouseEvent<Element>) => {
       if (!refs.container.current) return;
+
       setImageState((prev) => {
         if (!prev.isDragging) return prev;
-        const rect = refs.container.current.getBoundingClientRect();
+        const rect = refs.container.current?.getBoundingClientRect() || {
+          left: 0,
+          top: 0,
+        };
         const x = e.clientX - rect.left - prev.dragOffset.x;
         const y = e.clientY - rect.top - prev.dragOffset.y;
         return {
@@ -31,7 +57,7 @@ export const useImageDrag = (refs, setImageState) => {
         };
       });
     },
-    [refs]
+    [refs, setImageState]
   );
 
   const handleMouseUp = useCallback(() => {
